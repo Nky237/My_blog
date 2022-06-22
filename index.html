@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./onepage/css/bootstrap.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <!-- <link rel="stylesheet" href="../../assets/vendor/font-awesome/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+   <!-- BACKGROUND VIDEO SECTION -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <button id="btnoo" type="submit"><i class="fa fa-moon-o" style="font-size:32px; padding-left: 3px;"></i></button> 
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+
+    <div class="hero">
+        <video autoplay loop muted plays-inline class="back">
+            <source src="./video.mp4" type="video/mp4">
+        </video>
+
+        <div class="text-center">
+            <h1>OUR BLOGSITE, WE ARE HERE TO SERVE YOU ALL DAY LONG</h1>
+            <h1>WE SAVE ALL YOUR DATA</h1>
+        </div>
+        
+    </div>
+   
+   <div class="game">
+    <div class="container">
+        
+    <div class="row py-5">
+        <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" class="col-lg-6">
+                <form id="post-form">
+                    <div class="mb-3">
+                      <label for="title" class="form-label" >Post Title</label>
+                      <input type="text" class="form-control" id="title" aria-describedby="emailHelp">
+                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="form-floating mb-3">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="body"></textarea>
+                    <label for="floatingTextarea">Comments</label>
+                    </div>
+                    <div class=" d-flex">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+        </div>
+        <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <lottie-player src="./lottie/108347-designer.json" background="transparent"  speed="1"  style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+                    </div>
+                </div>
+        </div>
+    </div>
+    
+</div>
+
+
+
+<!-- THE BLOG SECTION -->
+<div class="card-section mt-3">
+    <div class="container">
+        <div class="row" id="post-holder">
+            <div data-aos="flip-left"data-aos-easing="ease-out-cubic" data-aos-duration="2000" class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                      <p>1</p>
+                        <p id="post-title">loremE</p>
+                        <p id="post-body"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis,
+                         non officia magnam reiciendis at sit sint omnis quo a dolorum quas
+                          quasi nostrum vel molestiae, 
+                        sapiente sed inventore ipsa! Laudantium? </p>
+                    </div>
+                    
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-primary m-1" onclick="updatePost()"><i class="fa fa-upload" style="font-size:22px; padding-left: 3px;"></i> Update Post</button>
+                            <button type="submit" class="btn btn-primary m-1" onclick="viewPost()"><i class="fa fa-eye" style="font-size:22px; padding-left: 3px;"></i> View Post</button>
+                            <button type="submit" class="btn btn-danger m-1" onclick="deletePost()"><i class="fa fa-trash" style="font-size:22px; padding-left: 3px;"></i> Delete Post</button>
+                        </div>
+
+                        <!-- <div  -->
+                   </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+
+</body>
+<script src="./index.js"></script>
+<script src="./onepage/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init(
+        {
+  // Global settings:
+  disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+  startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+  initClassName: 'aos-init', // class applied after initialization
+  animatedClassName: 'aos-animate', // class applied on animation
+  useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+  disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+  debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+  throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+  
+
+  // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+  offset: 120, // offset (in px) from the original trigger point
+  delay: 0, // values from 0 to 3000, with step 50ms
+  duration: 1000, // values from 0 to 3000, with step 50ms
+  easing: 'ease', // default easing for AOS animations
+  once: false, // whether animation should happen only once - while scrolling down
+  mirror: false, // whether elements should animate out while scrolling past them
+  anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+}
+    );
+  </script>
+</html>
